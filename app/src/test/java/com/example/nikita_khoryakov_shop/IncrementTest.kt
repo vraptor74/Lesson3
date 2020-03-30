@@ -12,4 +12,12 @@ class IncrementTest {
 
         assertEquals(2, i)
     }
+
+    @Test
+    fun divideTest() {
+        var i = 1
+        i += 1
+
+        assertEquals(2, 4 / 2)
+    }
 }
