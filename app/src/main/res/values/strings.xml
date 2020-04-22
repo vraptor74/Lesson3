@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">nikita-khoryakov-shop</string>
+    <string name="checkout_header">Оформление заказа</string>
+    <string name="checkout_sum">Итого</string>
+    <string name="checkoutDiscount">Размер скидки</string>
+    <string name="inputMobile">Телефон</string>
+    <string name="buttonPay">Оплатить</string>
+    <string name="checkoutPrice">Цена без скидки</string>
+    <string name="inputName">Имя</string>
+    <string name="inputSurname">Фамилия</string>
+    <string name="buttonConfirm">Подтвердить</string>
 </resources>

@@ -9,21 +9,61 @@ import org.junit.Test
  */
 class ExampleUnitTest {
 
+
+    private val presenter = Presenter()
     @Test
     fun example() {
-
-        val iphoneCase = Product(price = 123.5, salePercent = 30)
-        val samsungCase = Product(price = 124.5, salePercent = 15)
-
-        val pricePrinter: PricePrinter = ConsolePricePrinter()
-
-        val discountIphoneCasePrice = iphoneCase.calcDiscountPrice()
-        pricePrinter.print(discountIphoneCasePrice)
-
-        val discountSamsungCasePrice = samsungCase.calcDiscountPrice()
-        pricePrinter.print(discountSamsungCasePrice)
+        presenter.printBasket()
 
     }
+}
+
+class Presenter {
+    val iphoneCase = Product(price = 123.5, salePercent = 30, productName = "IphoneCase")
+    val samsungCase = Product(price = 124.5, salePercent = 15, productName = "SamsungCase")
+
+
+    private val pricePrinter: PricePrinter = ConsolePricePrinter()
+    private val products = listOf(iphoneCase, samsungCase)
+    val testBasket = Basket(products)
+
+    fun printBasket() {
+        pricePrinter.print(testBasket.getFinalPrice())
+    }
+
+
+    fun pricePrinter() {
+        products.forEach { product ->
+            pricePrinter.print(product.calcDiscountPrice())
+        }
+    }
+
+    fun productNamePrint() {
+        products.forEach { product ->
+            pricePrinter.print(product.getProductName())
+        }
+    }
+
+    fun productNameAndPrice() {
+        products.forEach { product ->
+            pricePrinter.print("${product.getProductName()}: ${product.calcDiscountPrice()}")
+
+        }
+
+
+    }
+}
+
+class Basket(products: List<Product>) {
+    private var overallPrice: Double = 0.0
+
+    init {
+        for (item in products) {
+            this.overallPrice = this.overallPrice + item.calcDiscountPrice()
+        }
+    }
+
+    fun getFinalPrice(): Double = this.overallPrice
 }
 
 class Product(
@@ -31,7 +71,8 @@ class Product(
      * Must be positive
      */
     private val price: Double,
-    private val salePercent: Int = 0
+    private val salePercent: Int = 0,
+    private val productName: String
 ) {
     /**
      * @return price with applied discount determined by [salePercent]
@@ -40,6 +81,8 @@ class Product(
      * If [salePercent] less than 0 product price will be increased
      */
     fun calcDiscountPrice(): Double = price * (1 - salePercent / 100.0)
+
+    fun getProductName(): String = productName
 }
 
 interface PricePrinter {
@@ -50,18 +93,17 @@ interface PricePrinter {
      * If price have fractional part than it will be rounded for 2 symbols after "."
      */
     fun print(price: Double)
+    fun print(name: String)
 }
 
 class ConsolePricePrinter : PricePrinter {
 
-    override fun print(discountPrice: Double) {
+    override fun print(price: Double) {
+        println(price)
+    }
 
-        if (Math.floor(discountPrice) == (discountPrice)) {
-            println(Math.floor(discountPrice).toInt().toString())
-        } else {
-            println(String.format("%.2f", discountPrice))
-        }
-
+    override fun print(name: String) {
+        println(name)
 
     }
 

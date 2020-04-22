@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".CheckoutActivity">
 
     <TextView
         android:id="@+id/checkoutHeader"
@@ -74,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/checkoutNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
@@ -138,7 +138,7 @@
         tools:text="1200 рублей" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/checkoutFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -150,14 +150,16 @@
         app:layout_constraintTop_toBottomOf="@+id/checkoutStatIcon" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/checkoutLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
         android:ems="10"
         android:hint="@string/inputSurname"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkoutStatIcon"
         app:layout_constraintVertical_bias="0.702" />
@@ -177,5 +179,22 @@
         app:layout_constraintBottom_toTopOf="@+id/checkoutPay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/catalogButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Каталог"
+        app:layout_constraintBottom_toTopOf="@+id/checkoutConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="33dp"
+        android:layout_height="39dp"
+        android:src="@android:drawable/ic_menu_revert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
