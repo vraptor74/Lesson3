@@ -3,8 +3,8 @@ package com.example.nikita_khoryakov_shop.HomeWork
 
 class HomeWorkLesson5 {
     fun example() {
-        val iphoneCase = Product(price = 155.0, salePercent = 20)
-        val samsungCase = Product(price = 123.0, salePercent = 30)
+        val iphoneCase = Product(price = 155.0, salePercent = 20, name = "")
+        val samsungCase = Product(price = 123.0, salePercent = 30, name = "")
 
         val productList: List<Product> = listOf(iphoneCase, samsungCase)
         val basket = Basket(productList)
@@ -17,7 +17,7 @@ class HomeWorkLesson5 {
 }
 
 class Basket(
-    private val products: List<Product>
+    val products: List<Product>
 ) {
     fun calcTotalDiscountPrice(): Double = products.map { it.calcDiscountPrice() }.sum()
 }
@@ -27,7 +27,10 @@ class Product(
      * Must be positive
      */
     private val price: Double,
-    private val salePercent: Int = 0
+    private val salePercent: Int = 0,
+    private val name: String
+
+
 ) {
     /**
      * @return price with applied discount determined by [salePercent]
@@ -36,6 +39,9 @@ class Product(
      * If [salePercent] less than 0 product price will be increased
      */
     fun calcDiscountPrice(): Double = price * (1 - salePercent / 100.0)
+    fun getProductName(): String = name
+    fun getProductPrice(): Double = price
+    fun getProductSale(): Int = salePercent
 }
 
 interface PricePrinter {

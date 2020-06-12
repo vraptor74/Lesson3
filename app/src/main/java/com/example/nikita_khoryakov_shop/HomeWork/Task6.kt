@@ -79,4 +79,6 @@ class ConsolePricePrinter : PricePrinter1 {
     override fun print(name: String, price: Double) {
         println("$name: $price")
     }
+
+    
 }
