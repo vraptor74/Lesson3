@@ -8,7 +8,9 @@ data class CreateOrderModel(
 
     var secondName: String = "",
 
-    var middleName: String = ""
+    var middleName: String = "",
+
+    var phone: String = ""
 
 
 )

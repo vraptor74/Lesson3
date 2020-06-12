@@ -38,6 +38,13 @@ class ProductsPresenter : MvpPresenter<ProductsView>() {
         viewState.showErrorForMiddleName(checkSymbols(text))
     }
 
+    fun checkPhone(text: String) {
+        if (!checkStringPhone(text)) model.phone = text
+        viewState.showErrorForPhone(checkStringPhone(text))
+    }
+
+    private fun checkStringPhone(text: String): Boolean = !(Regex("(\\+7|8)\\d{10}").matches(text))
+
     private fun checkSymbols(text: String): Boolean = text.length < 3
 
     fun pricePrint() {

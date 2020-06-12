@@ -65,6 +65,17 @@ class CheckoutActivity : BaseActivity(), ProductsView {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
+
+
+
+        checkoutPhoneNumber.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                presenter.checkPhone(s.toString())
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
     }
 
     override fun print(price: Double) {
@@ -92,5 +103,9 @@ class CheckoutActivity : BaseActivity(), ProductsView {
 
     override fun showErrorForMiddleName(visible: Boolean) {
         checkoutMiddleName.showError(visible)
+    }
+
+    override fun showErrorForPhone(visible: Boolean) {
+        checkoutPhoneNumber.showError(visible)
     }
 }

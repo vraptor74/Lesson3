@@ -25,4 +25,7 @@ interface ProductsView : MvpView {
 
     @StateStrategyType(AddToEndSingleStrategy::class)
     fun showErrorForMiddleName(visible: Boolean)
+
+    @StateStrategyType(AddToEndSingleStrategy::class)
+    fun showErrorForPhone(visible: Boolean)
 }
