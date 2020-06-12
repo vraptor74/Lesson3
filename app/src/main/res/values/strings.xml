@@ -1,12 +1,58 @@
 <resources>
-    <string name="app_name">nikita-khoryakov-shop</string>
+    <string name="app_name">Магазин</string>
+    <!--Checkout-->
     <string name="checkout_header">Оформление заказа</string>
-    <string name="checkout_sum">Итого</string>
-    <string name="checkoutDiscount">Размер скидки</string>
-    <string name="inputMobile">Телефон</string>
-    <string name="buttonPay">Оплатить</string>
-    <string name="checkoutPrice">Цена без скидки</string>
-    <string name="inputName">Имя</string>
-    <string name="inputSurname">Фамилия</string>
-    <string name="buttonConfirm">Подтвердить</string>
+    <string name="checkout_sum">Bтого</string>
+    <string name="checkoutHintPhone">Телефон</string>
+    <string name="checkout_hint_phone">Телефон</string>
+    <string name="checkout_pay">Оплатить</string>
+    <string name="checkout_total_price">Итого к оплате</string>
+    <string name="checkout_minus">-</string>
+    <string name="checkout_discount">Скидка</string>
+    <string name="checkout_basket_items">Товары в корзине</string>
+    <string name="checkout_order_details">Состав заказа</string>
+    <string name="checkout_payment_card">Картой</string>
+    <string name="checkout_payment_cash">Наличными</string>
+    <string name="checkout_payment_method">Способ оплаты</string>
+    <string name="checkout_hint_middle_name">Отчество</string>
+    <string name="checkout_hint_first_name">Имя</string>
+    <string name="checkout_hint_last_name">Фамилия</string>
+    <string name="checkout_personal_data">Личные данные</string>
+
+    <!--Cart-->
+    <string name="btn_buy_cart">Оформить заказ</string>
+    <string name="total_price">Итого</string>
+    <string name="discount_price">Скидка</string>
+    <string name="price_header">Цена</string>
+    <string name="title_header">Наименование</string>
+
+
+    <string name="cart_header">Корзина</string>
+    <string name="price_with_discount">Итог</string>
+    <string name="discount_present">Процент</string>
+    <string name="price">Цена</string>
+    <string name="product_title">Title</string>
+    <string name="second_name_title">Фамилия</string>
+    <string name="first_name_title">Имя</string>
+    <string name="third_name_title">Отчество</string>
+    <string name="phone_title">Телефон</string>
+    <string name="phone_example">Пример, 89999999999</string>
+    <string name="catalog_header">Каталог</string>
+    <string name="footer_title">Футер</string>
+    <string name="product_image_descr">product</string>
+    <string name="catalog_item_price_placeholder">Price</string>
+    <string name="detailed_photo_title">detailed photo</string>
+    <string name="some_text">someText</string>
+    <string name="detailed_header">Превью</string>
+    <string name="btn_to_cart_from_catalog">Корзина</string>
+    <string name="buy_btn_title">Купить</string>
+    <string name="purchase_title">Оформление заказа</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <string name="menu_catalog_title">Каталог</string>
+    <string name="menu_account_title">Аккаунт</string>
+    <string name="menu_cart_title">Корзина</string>
+    <string name="this_is_account_page_placeholder">This is account page</string>
+    <string name="detailed_nav_title">Описание</string>
+    <string name="delete_icon_iv_description">delete icon</string>
+    <string name="add_catalog_item_btn_title">Добавить</string>
 </resources>

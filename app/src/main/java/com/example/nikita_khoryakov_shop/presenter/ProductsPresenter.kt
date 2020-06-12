@@ -1,16 +1,23 @@
 package com.example.nikita_kho
 
 
-import com.example.nikita_khoryakov_shop.CreateOrderModel
-import com.example.nikita_khoryakov_shop.Product
-import com.example.nikita_khoryakov_shop.ProductsView
+import com.example.nikita_khoryakov_shop.domain.model.CreateOrderModel
+import com.example.nikita_khoryakov_shop.domain.model.Product
+import com.example.nikita_khoryakov_shop.presenter.ProductsView
 import moxy.MvpPresenter
 
 class ProductsPresenter : MvpPresenter<ProductsView>() {
 
-    private val iphoneCase = Product(price = 123.5, salePercent = 30, productName = "IphoneCase")
-    private val samsungCase = Product(price = 124.5, salePercent = 15, productName = "SamsungCase")
-
+    private val iphoneCase = Product(
+        price = 123.5,
+        salePercent = 30,
+        productName = "IPhone Case"
+    )
+    private val samsungCase = Product(
+        price = 124.5,
+        salePercent = 15,
+        productName = "Samsung Case"
+    )
 
     private val products = listOf(iphoneCase, samsungCase)
 
@@ -21,16 +28,19 @@ class ProductsPresenter : MvpPresenter<ProductsView>() {
         viewState.showErrorForFirstName(checkSymbols(text))
     }
 
-    fun checkLastName(text: String) {
-        if (!checkSymbols(text)) model.LastName = text
-        viewState.showErrorForLastName(checkSymbols(text))
+    fun checkSecondName(text: String) {
+        if (!checkSymbols(text)) model.secondName = text
+        viewState.showErrorForSecondName(checkSymbols(text))
     }
 
+    fun checkMiddleName(text: String) {
+        if (!checkSymbols(text)) model.middleName = text
+        viewState.showErrorForMiddleName(checkSymbols(text))
+    }
 
     private fun checkSymbols(text: String): Boolean = text.length < 3
 
-
-    fun pricePrinter() {
+    fun pricePrint() {
         viewState.print(iphoneCase.calcDiscountPrice())
 
         val allPrice: Double = 0.0
@@ -45,12 +55,10 @@ class ProductsPresenter : MvpPresenter<ProductsView>() {
         }
     }
 
-    fun productNameAndPrice() {
+    fun productNameAndPricePrint() {
         products.forEach { product ->
             viewState.print("${product.getProductName()}: ${product.calcDiscountPrice()}")
-
         }
-
     }
 }
 

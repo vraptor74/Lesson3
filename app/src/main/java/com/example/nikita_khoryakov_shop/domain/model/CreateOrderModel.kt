@@ -1,4 +1,4 @@
-package com.example.nikita_khoryakov_shop
+package com.example.nikita_khoryakov_shop.domain.model
 
 /**
  * Модель для создание заказа
@@ -6,7 +6,9 @@ package com.example.nikita_khoryakov_shop
 data class CreateOrderModel(
     var firstName: String = "",
 
-    var LastName: String = ""
+    var secondName: String = "",
+
+    var middleName: String = ""
 
 
 )

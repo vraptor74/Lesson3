@@ -1,4 +1,4 @@
-package com.example.nikita_khoryakov_shop
+package com.example.nikita_khoryakov_shop.domain.model
 
 class Product(
     /**

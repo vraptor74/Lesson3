@@ -18,27 +18,12 @@
 
     <Button
         android:id="@+id/checkoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Оформить заказ"
+        android:layout_width="191dp"
+        android:layout_height="53dp"
+        android:text="В Корзину"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/basketButton" />
-
-    <Button
-        android:id="@+id/basketButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Корзина"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/catalogCheckoutBtn" />
-
-    <Button
-        android:id="@+id/catalogCheckoutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Каталог"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/backButton"

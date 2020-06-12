@@ -1,7 +1,9 @@
-package com.example.nikita_khoryakov_shop
+package com.example.nikita_khoryakov_shop.ui
 
 import android.content.Intent
 import android.os.Bundle
+import com.example.nikita_khoryakov_shop.R
+import com.example.nikita_khoryakov_shop.ui.cart.catalog.CatalogActivity
 import kotlinx.android.synthetic.main.information_layout.*
 
 class InformationActivity : BaseActivity() {
@@ -15,14 +17,7 @@ class InformationActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
-        catalogCheckoutBtn.setOnClickListener {
-            startActivity(Intent(this, CatalogActivity::class.java))
 
-        }
-        basketButton.setOnClickListener {
-            startActivity(Intent(this, BasketActivity::class.java))
-
-        }
         checkoutButton.setOnClickListener {
             startActivity(Intent(this, CheckoutActivity::class.java))
 
